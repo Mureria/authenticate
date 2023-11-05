@@ -5,6 +5,7 @@ const app = express();
 const mongoose =require('mongoose');
 
 const userRoute = require('./route/user');
+const homeRoute = require('./route/home');
 
 const PORT = process.env.PORT || 5000
 const { MONGO_URI } = process.env;
@@ -13,6 +14,7 @@ const { MONGO_URI } = process.env;
 
 app.use(express.json());
 app.use('/user', userRoute);
+app.use('/homepage', homeRoute);
 
 
 // Conneting to the database
